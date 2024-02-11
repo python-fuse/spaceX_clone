@@ -1,0 +1,145 @@
+@font-face {
+  font-family: dinBold;
+  src: url("./fonts/din_bold.otf");
+}
+@font-face {
+  font-family: din;
+  src: url("./fonts/din.otf");
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  scrollbar-width: 3px;
+  scrollbar-gutter: 4px;
+}
+.page1 {
+  background-image: url("./images/Ovzon_2_pad.jpg");
+}
+.page2 {
+  background-image: url("./images/starlinklaunch.jpg");
+}
+.page3 {
+  background-image: url("./images/takeoffdesktop.jpg");
+}
+.page4 {
+  background-image: url("./images/flight.jpg");
+}
+
+.page {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 2rem 4rem;
+  background-position: center center;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  overflow-x: hidden;
+  height: 100dvh;
+}
+.animate{
+  animation: animate .6s linear forwards ease-in;
+}
+.nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.links {
+  display: flex;
+  gap: 1rem;
+  text-transform: uppercase;
+}
+.links a {
+  position: relative;
+}
+.links a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  border-bottom: 2px solid #ffd987;
+  transition: width 300ms ease-in-out;
+}
+.links a:hover::before {
+  width: 100%;
+}
+a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  font-family: dinBold;
+  color: #fff;
+}
+.options {
+  display: flex;
+}
+.page1__content {
+  position: absolute;
+  left: 2rem;
+  bottom: 7rem;
+  text-align: start;
+  font-family: din;
+  color: #fff;
+  h2 {
+    color: rgb(224, 224, 224);
+    margin-bottom: 0.2rem;
+    font-weight: 200;
+  }
+  p {
+    font-family: dinBold;
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+  }
+  button {
+    padding: 1rem;
+    width: 150px;
+    border: 2px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-family: dinBold;
+  }
+}
+#next {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: nextpage 3s infinite ease-in;
+  opacity: 0.3;
+}
+@keyframes nextpage {
+  from {
+    bottom: 3rem;
+  }
+  50% {
+    bottom: 1rem;
+  }
+  to {
+    bottom: 3rem;
+  }
+}
+footer {
+  padding: 2rem;
+  background-color: #111111;
+  color: white;
+  font-family: din;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 300;
+}
+@keyframes animate{
+  from{
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
